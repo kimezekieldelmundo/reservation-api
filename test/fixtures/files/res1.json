@@ -1,0 +1,21 @@
+{
+    "start_date": nil,
+    "end_date": nil,
+    "nights": nil,
+    "guests": nil,
+    "adults": nil,
+    "children": nil,
+    "infants": nil,
+    "status": nil,
+    "guest": {
+        "id": nil,
+        "first_name": nil,
+        "last_name": nil,
+        "phone": nil,
+        "email": nil
+    },
+    "currency": nil,
+    "payout_price": nil,
+    "security_price": nil,
+    "total_price": nil
+}
