@@ -9,7 +9,14 @@
 
 ### Database
 #### Development
-
+1. if the database to be used does not exist:
+```
+[reservation-api] rake db:create
+```
+2. load schema
+```
+[reservation-api] rake db:schema:load
+```
 Config | value | default value
 --- | --- | ---
 database | ENV['DB_NAME'] | 'reservation_api'
@@ -18,6 +25,10 @@ password | ENV['DB_PASSWORD'] | ''
 host | ENV['DB_HOST'] | 'localhost'
 pool | ENV['DB_POOL'] | '5'
 #### Testing
+1. if the database to be used does not exist:
+```
+[reservation-api] RAILS_ENV=test rake db:create
+```
 Config | value | default value
 --- | --- | ---
 database | ENV['DB_NAME'] | 'reservation_api_test'
@@ -65,10 +76,6 @@ curl --location --request POST 'localhost:3000/reservations/import' \
     }'
 ```
 ## Tests
-When running test for the first time or when the database for testing does not exist, run:
-```
-[reservation-api] RAILS_ENV=test rake db:create
-```
 To execute tests, run:
 ```
 [reservation-api] rake db:test:prepare

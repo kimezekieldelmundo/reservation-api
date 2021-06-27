@@ -17,6 +17,11 @@ class ReservationsController < ApplicationController
     end
 
     def show
-        render json: Reservation.find(params[:id]).to_json
+        reservation = Reservation.find_by(id: params[:id])
+        if reservation.present?
+            render json: reservation.to_json
+        else
+            render json: reservation.to_json, status: 404
+        end
     end
 end
