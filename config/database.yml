@@ -1,0 +1,24 @@
+development:
+  database: "<%= ENV['DB_NAME'] || 'reservation_api' %>"
+  username: "<%= ENV['DB_USER'] || 'root' %>"
+  password: "<%= ENV['DB_PASSWORD'] || '' %>"
+  host: <%= ENV['DB_HOST'] || 'localhost' %>
+  adapter: mysql2
+  encoding: utf8
+  pool: "<%= ENV['DB_POOL'] || 5 %>"
+test:
+  database: "<%= ENV['DB_NAME'] || 'reservation_api' %>"
+  username: "<%= ENV['DB_USER'] || 'root' %>"
+  password: "<%= ENV['DB_PASSWORD'] || '' %>"
+  host: <%= ENV['DB_HOST'] || 'localhost' %>
+  adapter: mysql2
+  encoding: utf8
+  pool: "<%= ENV['DB_POOL'] || 5 %>"
+production:
+  database: "<%= ENV['DB_NAME'] || 'reservation_api' %>"
+  username: "<%= ENV['DB_USER'] || 'root' %>"
+  password: "<%= ENV['DB_PASSWORD'] || '' %>"
+  host: <%= ENV['DB_HOST'] || 'localhost' %>
+  adapter: mysql2
+  encoding: utf8
+  pool: "<%= ENV['DB_POOL'] || 5 %>"
