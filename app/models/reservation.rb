@@ -1,13 +1,15 @@
 class Reservation < ApplicationRecord
-    belongs_to :guest
+    DATE_FORMAT = '%Y-%m-%d'
+
+    belongs_to :guest, optional: true
     validate :dates_validity
     validate :total_guests_validity
 
     def to_json
         {
             id: id,
-            start_date: start_date,
-            end_date: end_date,
+            start_date: start_date.strftime(DATE_FORMAT),
+            end_date: end_date.strftime(DATE_FORMAT),
             nights: nights,
             guests: guests,
             adults: adults,
@@ -25,7 +27,7 @@ class Reservation < ApplicationRecord
 
     # checks if start_date is on or before the end_date
     def dates_validity
-        return unless start_date.present? && start_date.present?
+        return unless start_date.present? && end_date.present?
         unless start_date <= end_date
             errors.add(:start_date, :should_be_before_or_on_end_date)
         end

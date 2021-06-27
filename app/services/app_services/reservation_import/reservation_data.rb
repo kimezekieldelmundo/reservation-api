@@ -22,6 +22,7 @@ module AppServices
                     security_price: @security_price,
                     total_price: @total_price,
                     guest_id: @guest_id,
+                    localized_description: @localized_description,
                     guest_attributes: {
                         id: @guest_id,
                         first_name: @guest_first_name,
