@@ -13,7 +13,7 @@ module AppServices
                         if guest.present?
                             begin
                                 Rails.logger.info "[ReservationImporter] found a Guest with id=#{guest_id}. Updating guest"
-                                guest.update(guest_attrs)
+                                guest.update!(guest_attrs)
                                 Rails.logger.info "[ReservationImporter]Guest with id=#{guest_id} updated"
                             rescue ActiveRecord::RecordInvalid => e
                                 raise ReservationImportError.new("Failed to update Guest with id=#{guest_id} because: #{e.message}")
