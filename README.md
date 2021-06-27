@@ -81,3 +81,12 @@ To execute tests, run:
 [reservation-api] rake db:test:prepare
 [reservation-api] rails test --verbose
 ```
+## Notes
+- for the two payload format provided, it is assumed that all the fields for each format will be provided
+- Reservation validations
+    - start_date should be on or before end_date
+    - guests is the total of adults + children + infants
+- Guest Validations
+    - email is unique
+- if the guest id provided in the reservation data does not exists, the Guest will be created using the guest details supplied
+- if the guest id provided in th reservation data exists, the Guest will be updated using the guest details supplied unless there are validation errors e.g. guest email already exists
